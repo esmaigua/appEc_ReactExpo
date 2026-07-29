@@ -1,5 +1,4 @@
-import { useNavigation } from "expo-router";
-import React, { useEffect, useState } from "react";
+
 import {
   Alert,
   Image,
@@ -10,31 +9,6 @@ import {
 } from "react-native";
 
 export default function HomeScreen() {
-  const [showSplash, setShowSplash] = useState(true);
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    navigation.setOptions({ tabBarStyle: { display: "none" } });
-
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-      navigation.setOptions({ tabBarStyle: { display: "flex" } });
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [navigation]);
-
-  if (showSplash) {
-    return (
-      <View style={styles.splashContainer}>
-        <Image
-          source={require("../../assets/images/logoEspana.png")}
-          style={styles.splashLogo}
-        />
-        <Text style={styles.splashText}>Seleccion Española de Fútbol</Text>
-      </View>
-    );
-  }
 
   const handlePress = () => {
     Alert.alert(
@@ -45,25 +19,29 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.homeContainer}>
-      <Text style={styles.title}>¡CAMPEONES DEL MUNDO 2026!</Text>
-      
+      <Text style={styles.title}>Selección Española de Fútbol</Text>
+
+      <Image
+        source={require("../../assets/images/logoEspana.png")}
+        style={styles.homeLogo}
+      />
+
       <View style={styles.infoCard}>
         <Text style={styles.infoText}>
-          <Text style={styles.boldText}>Selección Española de Futbol</Text>
+          <Text style={styles.boldText}>Confederación:</Text> European Football Association (UEFA)
         </Text>
-      </View>
-
-      <Text style={styles.infoText}>Segundo Lugar Copa del Mundo 2026</Text>
-
-      <View style={styles.infoCardArgentina}>
-        <Image
-          source={require("../../assets/images/logoArgentina.png")}
-          style={styles.homeLogo}
-        />
         <Text style={styles.infoText}>
-          <Text style={styles.boldText}>Selección Argentina de Futbol</Text>
+          <Text style={styles.boldText}>Entrenador actual:</Text> De la Fuente, Luis Enrique
+          Beccacece
+        </Text>
+        <Text style={styles.infoText}>
+          <Text style={styles.boldText}>Estadio:</Text> Estadio Santiago Bernabeu (Madrid)
         </Text>
       </View>
+
+      <TouchableOpacity style={styles.button} onPress={handlePress}>
+        <Text style={styles.buttonText}>¡Alentar a España!</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -119,20 +97,6 @@ const styles = StyleSheet.create({
     width: "100%",
     marginBottom: 30,
   },
-  infoCardArgentina: {
-    backgroundColor: "#291388",
-    padding: 20,
-    borderRadius: 12,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-    width: "100%",
-    marginBottom: 30,
-    textAlign: "center",
-    alignItems: "center",  
-  },
   infoText: {
     fontSize: 16,
     color: "#ffffff",
@@ -141,7 +105,6 @@ const styles = StyleSheet.create({
   boldText: {
     fontWeight: "bold",
     color: "#ffffff",
-    textAlign: "center",
   },
   button: {
     backgroundColor: "#FFCC00",

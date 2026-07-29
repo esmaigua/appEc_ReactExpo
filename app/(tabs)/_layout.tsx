@@ -29,15 +29,25 @@ export default function TabLayout() {
       />
            {" "}
       <Tabs.Screen
-        name="explore"
+        name="espana"
         options={{
-          title: "Explore",
+          title: "España",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="flag.fill" color={color} />
+          ),
+        }}
+      />
+         {" "}
+      <Tabs.Screen
+        name="acerca de"
+        options={{
+          title: "Acerca De",
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="paperplane.fill" color={color} />
           ),
         }}
       />
-         {" "}
+         {" "}      
     </Tabs>
   );
 }
