@@ -1,11 +1,11 @@
-# App La Tri - Selección Ecuatoriana de Fútbol
+# App Selección Española de Fútbol
 
 Esta es una aplicación móvil básica desarrollada con **React Native** y **Expo Go**. El proyecto fue creado como parte de una tarea práctica para familiarizarse con el entorno de desarrollo móvil, la estructura de Expo y los componentes fundamentales de React Native.
 
 ## 🚀 Características
 
-* **Splash Screen:** Pantalla de bienvenida con el fondo azul oficial.
-* **Home Screen:** Pantalla principal de la app con un diseño personalizado en azul marino que incluye con información básica.
+* **Splash Screen:** Pantalla de bienvenida con el fondo rojo de la selección española.
+* **Home Screen:** Pantalla principal de la app con un diseño personalizado de España
 * **Interactividad:** Un botón estilizado que, al ser presionado, muestra una alerta nativa en el celular para alentar al equipo.
 
 ## 🛠️ Tecnologías Utilizadas
